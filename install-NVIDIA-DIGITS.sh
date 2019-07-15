@@ -82,7 +82,7 @@ sudo apt-get install python-pip
 # Install DIGITS
 DIGITS_HOME=~/digits
 git clone https://github.com/NVIDIA/DIGITS.git $DIGITS_HOME
-sudo pip install -r $DIGITS_HOME/requirements.txt
+python -m pip install -r $DIGITS_HOME/requirements.txt
 export CAFFE_HOME=/home/nvidianav/caffe
 # Start DIGITS server
 ./digits-server
