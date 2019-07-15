@@ -8,6 +8,8 @@ sudo dpkg -i ${CUDA_REPO_PKG}
 sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub
 sudo apt-get update
 sudo apt-get install cuda-9-0
+# Check if CUDA is installed
+nvcc -V
 
 ## Install cuDNN. Reference link for CUDA Toolkit includes instructions for installing cuDNN.
 wget https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v7.6.1.34/prod/9.0_20190620/cudnn-9.0-linux-x64-v7.6.1.34.tgz
