@@ -65,7 +65,7 @@ make runtest
 # Build python wrapper
 make pycaffe
 sudo vim ~/.bashrc
-export PYTHONPATH=$HOME/Downloads/caffe/python:$PYTHONPATH
+export PYTHONPATH=home/nvidianav/caffe/python:$PYTHONPATH
 source ~/.bashrc
 # Check if you have things working properly:
 python
