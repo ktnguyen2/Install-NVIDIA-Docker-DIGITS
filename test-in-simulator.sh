@@ -1,4 +1,4 @@
-## Follow this link to install NVIDIA Drivers on Ubuntu. Easiest method is to use Software Manager.
+## Follow this link to install NVIDIA Drive on Ubuntu. Easiest method is to use Software Manager.
 # https://www.maketecheasier.com/install-nvidia-drivers-ubuntu/
 # Using GeForce GTX 760, I installed NVIDIA binary driver 384.130 (proprietary)
 
@@ -44,6 +44,13 @@ sudo apt-get install nvidia-docker2
 sudo pkill -SIGHUP dockerd
 # Test nvidia-smi with the latest official CUDA image
 docker run --runtime=nvidia --rm nvidia/cuda:9.0-base nvidia-smi
+
+## Install TensorRT 4.0 tar package. This will be used with Redtail Docker
+cd /home/nvidianav
+wget https://developer.nvidia.com/compute/machine-learning/tensorrt/4.0/ga/TensorRT-4.0.1.6.Ubuntu-16.04.4.x86_64-gnu.cuda-9.0.cudnn7.1
+
+cd home/nvidianav/redtail/tools/simulation/docker
+sudo ./build_redtail_image.sh /home/nvidianav/TensorRT-4.0.1.6.Ubuntu-16.04.4.x86_64-gnu.cuda-9.0.cudnn7.1.tar.gz
 
 ## Install TensorRT. Reference link: https://developer.download.nvidia.com/compute/machine-learning/tensorrt/secure/3.0/ga/TensorRT-Installation-Guide-3.0.4.pdf?K4zMZg2h8AJsRXkVqKnkWJ0tL4IdW5_czxEYNmbyBRyoklMbRpGvYF_uE28XeYPmyPw79OyUXZkVqCuVdu0qWLn8WuWxvMZo3Ky_YYnRfLHsrdZB26Bq7s_uVQRbqCEvM1wFlNZh8DadXe3lM-ndhUySBD4dKYI8xwm4Ckou2mCnge2Y6MbjWu9ONNSALem3nWNEMw
 wget https://developer.nvidia.com/compute/machine-learning/tensorrt/3.0/ga/nv-tensorrt-repo-ubuntu1604-ga-cuda9.0-trt3.0.4-20180208_1-1_amd64-deb
