@@ -44,3 +44,11 @@ sudo apt-get install nvidia-docker2
 sudo pkill -SIGHUP dockerd
 # Test nvidia-smi with the latest official CUDA image
 docker run --runtime=nvidia --rm nvidia/cuda:9.0-base nvidia-smi
+
+## Install TensorRT
+wget https://developer.nvidia.com/compute/machine-learning/tensorrt/3.0/ga/nv-tensorrt-repo-ubuntu1604-ga-cuda9.0-trt3.0.4-20180208_1-1_amd64-deb
+sudo dpkg -i nv-tensorrt-repo-ubuntu1604-ga-cuda9.0-trt3.0.4-20180208_1-1_amd64.deb
+sudo apt-get update
+sudo apt-get install tensorrt
+sudo apt-get install python-libnvinfer-doc
+sudo apt-get install uff-converter-tf
