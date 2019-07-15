@@ -1,4 +1,20 @@
 Reference link: 
+## Install NVIDIA Drivers (refer to other script)
+
+## Install CUDA Toolkit
+CUDA_REPO_PKG="cuda-repo-ubuntu1604-9-0-local_9.0.176-1_amd64-deb"
+wget https://developer.nvidia.com/compute/cuda/9.0/Prod/local_installers/${CUDA_REPO_PKG}
+sudo dpkg -i ${CUDA_REPO_PKG}
+sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub
+sudo apt-get update
+sudo apt-get install cuda-9-0
+
+## Install cuDNN
+wget https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v7.6.1.34/prod/9.0_20190620/cudnn-9.0-linux-x64-v7.6.1.34.tgz
+tar -xzvf cudnn-9.0-linux-x64-v7.6.1.34.tgz
+sudo cp cuda/include/cudnn.h /usr/local/cuda/include
+sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
+sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
 
 ## Install Caffe. Reference link: https://chunml.github.io/ChunML.github.io/project/Installing-Caffe-Ubuntu/
 sudo apt-get update
